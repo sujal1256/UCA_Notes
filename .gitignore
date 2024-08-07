@@ -1,0 +1,4 @@
+.vagrant/
+VagrantFile
+pg_config.sh
+.git/
