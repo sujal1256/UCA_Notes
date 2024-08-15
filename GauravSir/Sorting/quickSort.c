@@ -60,6 +60,27 @@ long long time_elapsed(int n)
   return after_millis-before_millis;
 }
 
+long long time_elapsed_worstcase(int n)
+{
+  int *arr = (int *) malloc(n * sizeof(int));
+
+  srand(time(NULL));
+  for(int i = n - 1; i>= 0 ; i--) arr[i] = i;
+
+  struct timeval before;
+  gettimeofday(&before, NULL);
+  long long before_millis = before.tv_sec*1000LL + before.tv_usec/1000;
+
+  quick_sort(arr,n);
+
+  struct timeval after;
+  gettimeofday(&after, NULL);
+  long long after_millis = after.tv_sec*1000LL + after.tv_usec/1000;
+
+  return after_millis-before_millis;
+}
+
+
 int main()
 
 {
@@ -68,9 +89,13 @@ int main()
 	long long t1 = time_elapsed(32000);
 	long long t2 = time_elapsed(64000);
 
-	// printf("%lf",t2*1.0/t1);
-        printf("%lld\n",t2);
-	printf("%lld\n",t1);
+	printf("%lf\n",t2*1.0/t1);
+        // printf("%lld\n",t2);
+	// printf("%lld\n",t1);
+	
+	long long t3 = time_elapsed_worstcase(32000);
+	long long t4 = time_elapsed_worstcase(64000);
+	printf("%lf\n",t4*1.0/t3);
 	return 0;
 
 }
