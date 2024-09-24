@@ -8,7 +8,9 @@ int rare = -1;
 int front = -1;
 int* arr;
 int max_size = 1;
+
 resize(max_size);
+
 int resize(int new_size){
 	int *new_arr = (int)malloc(sizeof(int)*new_size);
 	int k = 0;
@@ -38,7 +40,7 @@ int pop(){
 	}	
 	return item;
 }
-int 
+
 void test_samples(){
         push(3);
         push(10);

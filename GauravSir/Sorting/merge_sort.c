@@ -46,8 +46,8 @@ void merge_sort(int arr[], int n){
 
 void test_sample(){
 	
-	int input[] = {5,2,1,4,3};
-	int output[] = {1,2,3,4,5};
+	int input[] = {5,2,1,4,3,1,1,1,1,1};
+	int output[] = {1,1,1,1,1,1,2,3,4,5};
 	int n = sizeof(input)/sizeof(input[0]);
 	merge_sort(input,n);
 
@@ -81,7 +81,7 @@ int main()
 	test_sample();
 
 	long long t1 = time_elapsed(32000);
-        long long t2 = time_elapsed(64000);
+    long long t2 = time_elapsed(64000);
 	
 	printf("%lf",t2*1.0/t1);	
 	return 0;

@@ -2,3 +2,7 @@
 VagrantFile
 pg_config.sh
 .git/
+*.c.swp
+*.c.swo
+a.out
+*.exe

@@ -1,0 +1,7 @@
+
+
+function customPromise(){
+    return (
+        function()
+    )
+}

@@ -27,12 +27,11 @@ void quick_sort_recursive(int arr[],int left,int right){
 	quick_sort_recursive(arr,i+1,right);
 }
 void quick_sort(int arr[],int n){
-	quick_sort_recursive(arr,0,n-1);
-	
+	quick_sort_recursive(arr, 0, n-1);
 }
 void test_sample(){
 
-        int input[] = {5,2,1,4,3};
+        int input[] = {5,4,1,2,3};
         int output[] = {1,2,3,4,5};
         int n = sizeof(input)/sizeof(input[0]);
         quick_sort(input,n);
